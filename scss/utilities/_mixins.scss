@@ -1,0 +1,89 @@
+// ======================================
+//  Mixins
+// ======================================
+
+@mixin flex(
+  $disp: flex,
+  $flex-di: null,
+  $flex-b: null,
+  $wrap: null,
+  $just: null) {
+  display: $disp;
+  flex-direction: $flex-di;
+  flex-basis: $flex-b;
+  flex-wrap: $wrap;
+  justify-content: $just;
+}
+
+@mixin button-style {
+  font-size: 1em;
+  font-weight: 800;
+  color: $white;
+  text-transform: uppercase;
+  margin: em(10) 0;
+  transition: 0.4s;
+}
+
+@mixin grid-style {
+  width: 100%;
+  color: $grid-text-color;
+  font-weight: 700;
+  text-align: left;
+  padding-left: em(10);
+}
+
+@mixin centered-c($width: null, $display: null) {
+  max-width: $width;
+  display: $display;
+  margin: 0 auto;
+}
+
+@mixin centered-e($text-a: null, $align-i: null) {
+  text-align: $text-a;
+  align-items: $align-i;
+}
+
+@mixin buttons($map) {
+  @each $button, $color in $map {
+    &-#{$button} {
+      @include button-style;
+      background: $color;
+      transition-property: opacity;
+      &:hover {
+        opacity: 0.5;
+      }
+      @include media-q(medium) {
+        width: 100%;
+        margin-top: em(20);
+      }
+      @include media-q(large) {
+        width: 14%;
+        padding: em(10);
+        margin: 0 em(20) em(10) em(20);
+      }
+      @include media-q(xtra-l) {
+        width: 15%;
+        margin: 0 em(15) em(10) em(15);
+      }
+    }
+  }
+}
+
+@mixin media-q($break) {
+
+  @if $break == 'medium' {
+    @media (min-width: $break-m) {
+      @content;
+    }
+  }
+  @else if $break == 'large' {
+    @media (min-width: $break-l) {
+      @content;
+    }
+  }
+  @else if $break == 'xtra-l' {
+    @media (min-width: $break-xl) {
+      @content;
+    }
+  }
+}

@@ -1,0 +1,151 @@
+// **********************************************
+// _grid.scss
+// styles related to the grid system and
+// main container.
+// major grid styles have been added here for you
+// but additional styling may be needed
+// **********************************************
+
+// container
+.container {
+  margin: 0 em(20);
+  @include media-q(medium) {
+    margin: 0 em(30);
+  }
+  @include media-q(large) {
+    margin: 0 em(100);
+  }
+  @include media-q(xtra-l) {
+    margin: 0 25.5%;
+  }
+}
+
+// Cards
+.card {
+  padding: em(25);
+}
+
+// grid base class
+.grid {
+
+  // .grid__row
+  &__row {
+    @include flex($flex-di: column);
+      padding: 1em em(10);
+
+    // NOTE: replace with media query mixin if aiming for exceeds
+    flex-direction: column;
+    @include media-q(medium) {
+      margin: 0 auto;
+      max-width: 800px;
+    }
+    @include media-q(large) {
+      flex-direction: row;
+      max-width: $max-width;
+    }
+
+    &:nth-child(n+6) {
+      @include centered-e(center, center);
+    }
+  }
+
+  // .grid__col
+  &__col {
+
+    // create grid columns dynamically
+    // loop through each column size
+    @for $i from 1 through 12 {
+
+      // concatenate CSS selector, ie when $i = 1,
+      // selector would be .grid__col--1
+      &--#{$i} {
+
+        // base styles applied to all grid columns
+        // NOTE: could be converted to a placeholder, along with margin
+        // from the  media query
+        @extend %grid;
+
+        // NOTE: replace with media query mixin if aiming for exceeds
+        @include media-q(medium) {
+
+          // base stlyes applied to all grid columns
+          margin-top: 0;
+
+          // make column width a percentage of the column number / total columns
+          flex-basis: #{$i / 12 * 100 + "%"} ;
+        }
+      }
+    }
+  }
+}
+
+// targets all elements with classes that begin with grid__col
+[class^=grid__col] {
+  // grid__col + grid__col, targets two sibling columns
+  & + & {
+
+    // NOTE: replace with media query mixin if aiming for exceeds
+    @include media-q(large) {
+
+      // add grid gutter
+      margin-left: em(10);
+    }
+  }
+}
+
+@each $grid, $color in $grids {
+  .grid__col#{$grid} {
+    @include grid-style;
+    background: $color;
+    @include media-q(large) {
+      @include centered-e(center);
+    }
+  }
+}
+//
+.grid__col {
+  &--3 {
+    @include media-q(large) {
+      flex-basis: 38%;
+    }
+  }
+  &--9 {
+    @include media-q(large) {
+      flex-basis: 45%;
+      align-self: center;
+      margin-bottom: em(30);
+      margin-left: em(30);
+    }
+  }
+  &--5.theme__colors {
+    @include grid-style;
+    background-color: $grid-5-color;
+    @include media-q(large) {
+      @include centered-e(center);
+      flex-basis: 45%;
+    }
+  }
+  &--7.theme__colors {
+    @include grid-style;
+    background-color: $grid-7-color;
+    @include media-q(large) {
+      @include centered-e(center);
+      flex-basis: 65%;
+    }
+    &.centered {
+      margin: 20px 0;
+      @include media-q(large) {
+        @include centered-c;
+        flex-basis: 55%;
+        margin-bottom: em(60);
+      }
+    }
+  }
+  &--8.theme__colors {
+    @include grid-style;
+    background-color: $grid-8-color;
+    @include media-q(large) {
+      @include centered-e(center);
+    }
+  }
+}

@@ -1,0 +1,56 @@
+// ======================================
+//  Typography
+// ======================================
+
+// Web Fonts -------------------- //
+@import url('https://fonts.googleapis.com/css?family=Nunito+Sans:400,700,800|Open+Sans:400,700&display=swap');
+
+// Heading Styles --------------------- //
+.headline {
+  &--primary {
+    width: 70%;
+    font-family: $secondary-font;
+    color: $primary-color;
+    font-size: em(25);
+    font-weight: 700;
+    letter-spacing: em(-0.25);
+    line-height: 1.2;
+    margin-left: em(20);
+    @include media-q(large) {
+      width: 100%;
+    }
+  }
+  &--secondary {
+    color: $text-color;
+    text-align: left;
+    &:nth-child(1) {
+      margin-left: em(10);
+    }
+    &:nth-child(n+2) {
+      text-indent: em(30);
+      @include media-q(medium) {
+        margin: em(30) 0;
+      }
+    }
+  }
+}
+
+// Link Styles --------------------- //
+.link {
+  color: $default-color;
+  font-weight: bold;
+}
+
+// Quote Styles --------------------- //
+.blockquote {
+  font-family: $secondary-font;
+  font-size: em(20);
+  font-style: italic;
+  color: $text-color;
+  border-left: em(10) solid $primary-color;
+  border-radius: em(5);
+  padding-left: em(15);
+  @include media-q(large) {
+    font-size: em(22);
+  }
+}

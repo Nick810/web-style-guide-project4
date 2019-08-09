@@ -1,0 +1,19 @@
+// ======================================
+//  Button Styles
+// ======================================
+
+.theme__colors {
+  width: 100%;
+  color: $white;
+  border-radius: em(5);
+  padding: em(13) em(39);
+  margin: em(5) 0;
+}
+
+.btn {
+  &--default:last-child {
+    width: 90%;
+    margin-top: em(10);
+  }
+  @include buttons($buttons);
+}

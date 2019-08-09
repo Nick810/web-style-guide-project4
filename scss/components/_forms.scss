@@ -1,0 +1,30 @@
+// ======================================
+//  Form Styles
+// ======================================
+
+.form {
+  @include centered-e(center);
+  margin: em(30) 0;
+
+  &__label--hidden {
+    display: none;
+  }
+  &__input {
+    width: 83%;
+    border: none;
+    border-bottom: em(7) solid $primary-color;
+    padding: em(15) em(15) em(10) em(15);
+    margin-bottom: em(17);
+  }
+
+  & .headline--secondary {
+    text-indent: em(26);
+    @include media-q(medium) {
+      text-indent: em(60);
+    @include media-q(large){
+      text-indent: em(40);
+      margin-top: em(45);
+      }
+    }
+  }
+}

@@ -1,0 +1,21 @@
+// ======================================
+//  Base Styles
+// ======================================
+
+* {
+  box-sizing: border-box;
+}
+
+ul {
+  list-style-type: none;
+}
+
+p {
+  font-size: $default-font-size;
+  line-height: 1.6;
+  color: $text-color;
+}
+
+a {
+  text-decoration: none;
+}

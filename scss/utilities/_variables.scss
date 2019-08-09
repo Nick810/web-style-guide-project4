@@ -1,0 +1,51 @@
+// ======================================
+//  Variables
+// ======================================
+
+// Colors
+$primary-color: #58E1C1;
+$default-color: #51DDFC;
+$success-color: #63CB82;
+$error-color: #E4757A;
+$warning-color: #FD7855;
+$info-color: #927BC1;
+$grid-3-color: #DEB2EE;
+$grid-4-color: #4CCBEB;
+$grid-5-color: #63CB82;
+$grid-6-color: #3FABCA;
+$grid-7-color: #EC9EA3;
+$grid-8-color: #FD9F85;
+$grid-12-color: #80E8D1;
+$white: #fff;
+$complement: complement($primary-color);
+$text-color: #b5b5b5;
+$grid-text-color: #7f7f7f;
+
+// Fonts
+$primary-font: 'Nunito Sans', sans-serif;
+$secondary-font: 'Open Sans', sans-serif;
+$default-font-size: 16;
+
+// layout
+$max-width: 1150px;
+
+// Buttons
+$buttons: (
+  '-default': $default-color,
+  '-success': $success-color,
+  '-error': $error-color,
+  '-warning': $warning-color,
+  '-info': $info-color,
+);
+
+$grids: (
+  '--3.theme__colors': $grid-3-color,
+  '--4.theme__colors': $grid-4-color,
+  '--6.theme__colors': $grid-6-color,
+  '--12.theme__colors': $grid-12-color,
+);
+
+// Breakpoints
+$break-m: 768px;
+$break-l: 992px;
+$break-xl: 1401px;

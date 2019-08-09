@@ -1,0 +1,40 @@
+// **************************************
+// index.scss
+// Main Sass file used to import partials
+// **************************************
+
+// // Colors
+// $primary-color: #58E1C1;
+// $success-color: #63CB82;
+// $error-color: #E4757A;
+// $warning-color: #FD7855;
+// $info-color: #927BC1;
+// $grid-3-color: #DEB2EE;
+// $grid-4-color: #4CCBEB;
+// $grid-5-color: #63CB82;
+// $grid-6-color: #3FABCA;
+// $grid-7-color: #EC9EA3;
+// $grid-8-color: #FD9F85;
+// $grid-12-color: #80E8D1;
+// $white: #fff;
+// $text-color: #b5b5b5;
+//
+// // Fonts
+// $primary-font: 'HelveticaNeueMedium';
+// $secondary-font: din-2014, sans-serif;
+// $default-font-size: 16px;
+//
+// // layout
+// $max-width: 1150px;
+// // $gutter
+// 
+// // Breakpoints
+// $break-m: 769px;
+// $break-l: 1025px;
+
+// NOTE: import utilities and base partials here:
+
+// import utilities partials
+@import 'utilities/index';
+@import 'base/index';
+@import 'components/index';
